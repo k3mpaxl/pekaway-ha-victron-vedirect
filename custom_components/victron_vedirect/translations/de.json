@@ -1,0 +1,88 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Victron VE.Direct einrichten",
+        "description": "Seriellen Port des VE.Direct-Kabels angeben. Der Gerätetyp wird in der Regel automatisch erkannt.",
+        "data": {
+          "port": "Serieller Port",
+          "baudrate": "Baudrate",
+          "device_kind": "Gerätetyp"
+        },
+        "data_description": {
+          "port": "Pfad des seriellen Ports, z. B. /dev/ttyUSB0 oder /dev/serial/by-id/...",
+          "baudrate": "Für VE.Direct typisch 19200."
+        }
+      },
+      "reconfigure": {
+        "title": "Victron VE.Direct ändern",
+        "description": "Port, Baudrate oder Gerätetyp ändern.",
+        "data": {
+          "port": "Serieller Port",
+          "baudrate": "Baudrate",
+          "device_kind": "Gerätetyp"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Der angegebene Port kann nicht geöffnet werden.",
+      "no_frame": "Innerhalb der Wartezeit wurde kein VE.Direct-Datensatz empfangen.",
+      "unknown_device": "Das angeschlossene Gerät konnte nicht automatisch erkannt werden — bitte Gerätetyp manuell wählen.",
+      "unknown": "Unerwarteter Fehler."
+    },
+    "abort": {
+      "already_configured": "Dieses Victron-Gerät ist bereits eingerichtet.",
+      "wrong_device": "An dieser Schnittstelle antwortet ein anderes Gerät als bisher konfiguriert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Victron VE.Direct Optionen",
+        "data": {
+          "scan_interval": "Abfrageintervall (Sekunden)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "product_id": {"name": "Produkt-ID"},
+      "firmware": {"name": "Firmware-Version"},
+      "serial": {"name": "Seriennummer"},
+      "battery_voltage": {"name": "Batteriespannung"},
+      "battery_current": {"name": "Batteriestrom"},
+      "pv_voltage": {"name": "PV-Spannung"},
+      "pv_power": {"name": "PV-Leistung"},
+      "load_current": {"name": "Laststrom"},
+      "charge_state": {"name": "Ladestatus"},
+      "mppt_mode": {"name": "MPPT-Modus"},
+      "off_reason": {"name": "Grund für Aus-Zustand"},
+      "error_code": {"name": "Fehlercode"},
+      "yield_total": {"name": "Ertrag gesamt"},
+      "yield_today": {"name": "Ertrag heute"},
+      "yield_yesterday": {"name": "Ertrag gestern"},
+      "yield_30d": {"name": "Ertrag 30 Tage"},
+      "max_pv_today": {"name": "Max. PV-Spannung heute"},
+      "power": {"name": "Leistung"},
+      "consumed_ah": {"name": "Verbrauchte Ah"},
+      "state_of_charge": {"name": "Ladezustand"},
+      "time_to_go": {"name": "Verbleibende Zeit"},
+      "alarm_reason": {"name": "Alarmursache"},
+      "deepest_discharge": {"name": "Tiefste Entladung"},
+      "last_discharge": {"name": "Letzte Entladung"},
+      "avg_discharge": {"name": "Ø Entladung"},
+      "max_voltage": {"name": "Max. Batteriespannung"},
+      "min_voltage": {"name": "Min. Batteriespannung"},
+      "energy_discharged": {"name": "Entladene Energie"},
+      "energy_charged": {"name": "Geladene Energie"}
+    },
+    "binary_sensor": {
+      "alarm": {"name": "Alarm"},
+      "relay": {"name": "Relais"}
+    }
+  },
+  "exceptions": {
+    "serial_io": {"message": "Serieller I/O-Fehler: {error}"}
+  }
+}

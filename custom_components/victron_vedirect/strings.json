@@ -1,0 +1,88 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Victron VE.Direct",
+        "description": "Specify the serial port of the VE.Direct cable. The device type is usually detected automatically.",
+        "data": {
+          "port": "Serial port",
+          "baudrate": "Baud rate",
+          "device_kind": "Device type"
+        },
+        "data_description": {
+          "port": "Serial port path, e.g. /dev/ttyUSB0 or /dev/serial/by-id/...",
+          "baudrate": "Typically 19200 for VE.Direct."
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure Victron VE.Direct",
+        "description": "Change port, baud rate or device type.",
+        "data": {
+          "port": "Serial port",
+          "baudrate": "Baud rate",
+          "device_kind": "Device type"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The specified port cannot be opened.",
+      "no_frame": "No VE.Direct frame was received within the timeout.",
+      "unknown_device": "The connected device could not be detected automatically — please pick the device type manually.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]",
+      "wrong_device": "A different device responds at this port than the one originally configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Victron VE.Direct options",
+        "data": {
+          "scan_interval": "Scan interval (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "product_id": {"name": "Product ID"},
+      "firmware": {"name": "Firmware version"},
+      "serial": {"name": "Serial number"},
+      "battery_voltage": {"name": "Battery voltage"},
+      "battery_current": {"name": "Battery current"},
+      "pv_voltage": {"name": "PV voltage"},
+      "pv_power": {"name": "PV power"},
+      "load_current": {"name": "Load current"},
+      "charge_state": {"name": "Charge state"},
+      "mppt_mode": {"name": "MPPT mode"},
+      "off_reason": {"name": "Off reason"},
+      "error_code": {"name": "Error code"},
+      "yield_total": {"name": "Yield total"},
+      "yield_today": {"name": "Yield today"},
+      "yield_yesterday": {"name": "Yield yesterday"},
+      "yield_30d": {"name": "Yield 30 days"},
+      "max_pv_today": {"name": "Max PV voltage today"},
+      "power": {"name": "Power"},
+      "consumed_ah": {"name": "Consumed Ah"},
+      "state_of_charge": {"name": "State of charge"},
+      "time_to_go": {"name": "Time to go"},
+      "alarm_reason": {"name": "Alarm reason"},
+      "deepest_discharge": {"name": "Deepest discharge"},
+      "last_discharge": {"name": "Last discharge"},
+      "avg_discharge": {"name": "Average discharge"},
+      "max_voltage": {"name": "Max battery voltage"},
+      "min_voltage": {"name": "Min battery voltage"},
+      "energy_discharged": {"name": "Energy discharged"},
+      "energy_charged": {"name": "Energy charged"}
+    },
+    "binary_sensor": {
+      "alarm": {"name": "Alarm"},
+      "relay": {"name": "Relay"}
+    }
+  },
+  "exceptions": {
+    "serial_io": {"message": "Serial I/O error: {error}"}
+  }
+}
