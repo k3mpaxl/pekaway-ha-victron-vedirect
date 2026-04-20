@@ -1,13 +1,19 @@
 {
   "domain": "victron_vedirect",
   "name": "Victron VE.Direct",
-  "version": "2.0.0",
-  "documentation": "https://github.com/k3mpaxl/pekaway-ha-victron-vedirect",
-  "issue_tracker": "https://github.com/k3mpaxl/pekaway-ha-victron-vedirect/issues",
-  "codeowners": ["@k3mpaxl"],
+  "codeowners": [
+    "@k3mpaxl"
+  ],
   "config_flow": true,
+  "documentation": "https://github.com/k3mpaxl/pekaway-ha-victron-vedirect",
   "integration_type": "device",
   "iot_class": "local_push",
-  "loggers": ["custom_components.victron_vedirect"],
-  "requirements": ["pyserial>=3.5"]
+  "issue_tracker": "https://github.com/k3mpaxl/pekaway-ha-victron-vedirect/issues",
+  "loggers": [
+    "custom_components.victron_vedirect"
+  ],
+  "requirements": [
+    "pyserial>=3.5"
+  ],
+  "version": "2.0.0"
 }
