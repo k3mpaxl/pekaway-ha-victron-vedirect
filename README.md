@@ -22,7 +22,10 @@ Read live data from **Victron** MPPT solar chargers and SmartShunt/BMV battery m
 |---|---|
 | **Hardware** | Victron device with VE.Direct port |
 | **Cable** | VE.Direct-to-USB or VE.Direct-to-UART |
+| **Raspberry Pi** | `dtoverlay=uart4` (MPPT) and/or `dtoverlay=uart5` (SmartShunt) in `config.txt` when using UART |
 | **Home Assistant** | ≥ 2024.10 |
+
+> See the [VAN PI CORE setup guide](https://github.com/k3mpaxl/pekaway-vanpi-homeassistant#2-configtxt-anpassen) for detailed `config.txt` instructions.
 
 ## Installation via HACS
 
